@@ -47,22 +47,10 @@
         .next-btn {
             display: none;
         }
-        /* Floating Balloons */
-        .balloon {
-            position: absolute;
-            width: 50px;
-            height: 70px;
-            background: pink;
-            border-radius: 50%;
-            animation: floatUp 6s infinite;
-        }
-        @keyframes floatUp {
-            0% { transform: translateY(100vh); opacity: 0; }
-            100% { transform: translateY(-10vh); opacity: 1; }
-        }
     </style>
 </head>
 <body>
+    <!-- Background music -->
     <audio id="bgMusic" loop>
         <source src="90.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -78,29 +66,21 @@
         <p>Your Lamba cute handsome friend 😆</p>
     </div>
     
-    
+    <button class="next-btn" id="nextPage" onclick="nextPage()">Next Surprise 🎉</button>
     
     <script>
         function revealMessage() {
             document.getElementById('message').style.display = 'block';
             document.getElementById('nextPage').style.display = 'block';
-            document.getElementById("bgMusic").play();
+            let music = document.getElementById("bgMusic");
+            music.play().catch(error => {
+                console.log("Autoplay prevented:", error);
+            });
         }
 
         function nextPage() {
             window.location.href = 'next_page.html';
         }
-
-        function createBalloons() {
-            for (let i = 0; i < 20; i++) {
-                let balloon = document.createElement('div');
-                balloon.className = 'balloon';
-                balloon.style.left = Math.random() * 100 + 'vw';
-                balloon.style.animationDuration = (3 + Math.random() * 3) + 's';
-                document.body.appendChild(balloon);
-            }
-        }
-        createBalloons();
     </script>
 </body>
 </html>
