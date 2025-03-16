@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Birthday Message</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #8A2BE2, #D8BFD8);
+            color: white;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .message-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 600px;
+            font-size: 1.2em;
+            animation: fadeIn 3s ease-in-out;
+            display: none;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .reveal-btn, .next-btn {
+            background: #FF69B4;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .reveal-btn:hover, .next-btn:hover {
+            background: #FF1493;
+        }
+        .next-btn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>💜 A Special Message for You, My Friend 💜</h1>
+    <button class="reveal-btn" onclick="revealMessage()">Click to Read 📜</button>
+    
+    <div class="message-box" id="message">
+        <p>Dear Friend,</p>
+        <p>You are the most amazing person in my life. Your kindness, strength, and love inspire me every day. I am so lucky to have you as my friend. On this special day, I wish you all the happiness and success in the world. 🎂🎁💜</p>
+        <p>With lots of love,</p>
+        <p>Your Little Coder 💖</p>
+    </div>
+    
+    <button class="next-btn" id="nextPage" onclick="nextPage()">Next Surprise 🎉</button>
+    
+    <script>
+        function revealMessage() {
+            document.getElementById('message').style.display = 'block';
+            document.getElementById('nextPage').style.display = 'block';
+        }
+        function nextPage() {
+            window.location.href = 'next_page.html';
+        }
+    </script>
+</body>
+</html>

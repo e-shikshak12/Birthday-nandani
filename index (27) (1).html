@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Didi!</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #8A2BE2, #D8BFD8);
+            color: white;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3em;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .welcome-text {
+            font-size: 1.5em;
+            margin-top: 10px;
+            animation: fadeIn 3s ease-in-out;
+        }
+        .enter-btn {
+            background: #FF69B4;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .enter-btn:hover {
+            background: #FF1493;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .balloon {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background: pink;
+            border-radius: 50%;
+            animation: floatUp 6s infinite;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh); opacity: 0; }
+            100% { transform: translateY(-10vh); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 Happy Birthday Nandani 😀! 🎂</h1>
+    <p class="welcome-text">A special surprise awaits you! Click below to begin.</p>
+    <button class="enter-btn" onclick="enterSurprise()">Click to Enter 🎁</button>
+    
+    <script>
+        function enterSurprise() {
+            window.location.href = 'main.html'; // Link to the next surprise page
+        }
+        function createBalloons() {
+            for (let i = 0; i < 20; i++) {
+                let balloon = document.createElement('div');
+                balloon.className = 'balloon';
+                balloon.style.left = Math.random() * 100 + 'vw';
+                balloon.style.animationDuration = (3 + Math.random() * 3) + 's';
+                document.body.appendChild(balloon);
+            }
+        }
+        createBalloons();
+    </script>
+</body>
+</html>
